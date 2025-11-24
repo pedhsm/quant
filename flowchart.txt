@@ -1,0 +1,27 @@
+flowchart TD
+    subgraph Fase1_ETL [Fase 1: ETL]
+        A(raw_data) --> B(Script 01: build_dataset)
+        B --> C{SSoT: data/}
+    end
+
+    subgraph Fase2_Features [Fase 2: Análise & Features]
+        C --> D(Script 02: pca)
+        C --> E(Script 04: cointegration)
+        C --> F(Script 05: build_spread)
+        
+        D --> G(idio_prices.csv)
+        E --> H(analise_coint.csv)
+        F --> I(spread.csv)
+    end
+
+    subgraph Fase3_Dev [Fase 3: Desenvolvimento]
+        H --> J((Você cria a lógica))
+        J --> K(strats/estrategia.py)
+    end
+
+    subgraph Fase4_Backtest [Fase 4: Backtest Final]
+        C --> L(Script 09: run_mcp)
+        I --> L
+        K --> L
+        L --> M(Conclusões: P-Value)
+    end
