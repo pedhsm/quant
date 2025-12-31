@@ -47,3 +47,5 @@ systematic-research-framework/
 │   └── garch.py              # Volatility modeling
 ├── metrics/             # Performance analytics (Sharpe, Drawdown, Sortino)
 └── data/                # ETL scripts for Single Source of Truth (SSOT)
+
+Note: This project serves as a practical implementation of concepts studied in quantitative literature. The focus is on the software engineering architecture (ETL, Pipeline validation) and the application of statistical libraries, rather than the theoretical derivation of the models.
